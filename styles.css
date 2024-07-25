@@ -7,6 +7,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
+    padding-left: 200px; /* Adjust to create space for the vertical navbar */
 }
 header {
     background-image: url('background-header.jpg'); /* Add your desired background image for the header */
@@ -20,7 +21,7 @@ header {
     z-index: 1; /* Ensure the header is above the navbar */
 }
 .container {
-    padding-top: 60px; /* Adjusted padding to accommodate fixed navbar */
+    padding-top: 20px; /* Adjusted padding to fit the new layout */
 }
 .section:before {
     content: "";
@@ -132,25 +133,26 @@ a:hover {
     margin-top: 0;
 }
 
-/* Centered Navbar for Desktop */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure navbar background is black and see-through */
-    border: none !important; /* Remove the border */
+/* Vertical Navbar for Desktop */
+.navbar.fixed-left {
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 2; /* Ensure the navbar is above other content */
-    padding: 10px 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
 }
 
 .navbar-nav {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
 }
 
 .navbar-nav .nav-item {
-    margin: 0 1rem; /* Adjust the spacing between nav items as needed */
+    margin: 1rem 0; /* Adjust the spacing between nav items as needed */
 }
 
 .navbar-nav .nav-link {
@@ -201,11 +203,16 @@ a:hover {
     .contact-form button {
         padding: 0.75rem 1.5rem;
     }
+
+    /* Remove left padding for mobile view */
+    body {
+        padding-left: 0;
+    }
 }
 
 /* Ensure navbar doesn't overlap with content */
 @media (min-width: 992px) {
     .container {
-        padding-top: 100px; /* Adjust this value based on the height of your desktop navbar */
+        padding-top: 20px; /* Adjust this value based on the height of your desktop navbar */
     }
 }
