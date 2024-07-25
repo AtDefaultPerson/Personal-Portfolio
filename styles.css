@@ -8,7 +8,7 @@ body {
     color: #fff;
 }
 header {
-    background-image: url('background-header.jpg'); /* Add your desired background image for the header */
+    background-image: url('background-header.jpg'); /* Add your desired background image for the header no image yet acts as a placeholder*/
     background-size: cover;
     background-position: center;
     padding: 4rem 0; /* Increase padding for more space */
