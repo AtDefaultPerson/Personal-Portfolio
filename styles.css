@@ -9,7 +9,7 @@ body {
     color: #fff;
 }
 header {
-    background-image: url('background-header.jpg'); /* Place holder for now*/
+    background-image: url('background-header.jpg'); /* Add your desired background image for the header */
     background-size: cover;
     background-position: center;
     padding: 4rem 0; /* Increase padding for more space */
@@ -175,6 +175,9 @@ a:hover {
     .navbar ul {
         flex-direction: column;
         align-items: center;
+    }
+    .navbar ul li {
+        margin: 0.5rem 0;
     }
     .container {
         width: 95%;
