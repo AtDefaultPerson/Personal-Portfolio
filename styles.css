@@ -17,46 +17,14 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     color: #fff;
 }
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    z-index: 1000;
-}
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allow items to wrap */
-}
-.navbar ul li {
-    margin: 0.5rem 1rem; /* Adjusted for mobile */
-}
-.navbar ul li a {
-    color: #00ccff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 1rem;
-    display: block;
-}
-.navbar ul li a:hover {
-    text-decoration: underline;
-}
 .container {
-    width: 85%;
-    margin: 4rem auto 2rem; /* Adjusted margin to accommodate fixed navbar */
-    max-width: 1200px;
-    padding-top: 60px; /* Added padding to top to prevent overlap */
+    padding-top: 80px; /* Adjusted padding to accommodate fixed navbar */
 }
 .section:before {
     content: "";
     display: block;
-    height: 60px; /* Adjust this value based on the height of your navbar */
-    margin-top: -60px; /* Adjust this value based on the height of your navbar */
+    height: 80px; /* Adjust this value based on the height of your navbar */
+    margin-top: -80px; /* Adjust this value based on the height of your navbar */
     visibility: hidden;
 }
 h1, h2 {
@@ -160,41 +128,4 @@ a:hover {
 }
 .card h3 {
     margin-top: 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header {
-        padding: 2rem 0;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .navbar ul li {
-        margin: 0.5rem 0;
-    }
-    .container {
-        width: 95%;
-        margin: 2rem auto;
-        padding-top: 60px; /* Added padding to top to prevent overlap */
-    }
-    .section {
-        padding: 1rem;
-    }
-    .skills {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-    .contact-form input, .contact-form textarea {
-        padding: 0.75rem;
-    }
-    .contact-form button {
-        padding: 0.75rem 1.5rem;
-    }
 }
