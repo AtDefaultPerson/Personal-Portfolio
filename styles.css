@@ -18,7 +18,7 @@ header {
     color: #fff;
 }
 .container {
-    padding-top: 100px; /* Adjusted padding to accommodate fixed navbar */
+    padding-top: 120px; /* Adjusted padding to accommodate fixed navbar */
 }
 .section:before {
     content: "";
@@ -133,6 +133,7 @@ a:hover {
 /* Centered Navbar for Desktop */
 .navbar {
     background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure navbar background is black and see-through */
+    border: none !important; /* Remove the border */
 }
 
 .navbar-nav {
@@ -198,6 +199,6 @@ a:hover {
 /* Ensure navbar doesn't overlap with content */
 @media (min-width: 992px) {
     .container {
-        padding-top: 100px; /* Adjust this value based on the height of your desktop navbar */
+        padding-top: 120px; /* Adjust this value based on the height of your desktop navbar */
     }
 }
