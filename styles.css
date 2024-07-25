@@ -132,7 +132,8 @@ a:hover {
 
 /* Centered Navbar for Desktop */
 .navbar {
-    background-color: black !important; /* Ensure navbar background is black */
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure navbar background is black and see-through */
+    border-bottom: 1px solid #00ccff;
 }
 
 .navbar-nav {
