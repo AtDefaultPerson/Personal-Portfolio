@@ -25,8 +25,8 @@ header {
 .section:before {
     content: "";
     display: block;
-    height: 80px; /* Adjust this value based on the height of your navbar */
-    margin-top: -80px; /* Adjust this value based on the height of your navbar */
+    height: 20px; /* Adjust this value based on the height of your navbar */
+    margin-top: -20px; /* Adjust this value based on the height of your navbar */
     visibility: hidden;
 }
 h1, h2 {
