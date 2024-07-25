@@ -132,10 +132,40 @@ a:hover {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    .navbar {
-        display: none;
+    /* Hide desktop navbar */
+    .navbar.d-lg-flex {
+        display: none !important;
     }
-    .navbar.collapse {
-        display: block;
+
+    /* Show mobile navbar */
+    .navbar.d-lg-none {
+        display: flex !important;
+    }
+
+    header {
+        padding: 2rem 0;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .container {
+        width: 95%;
+        margin: 2rem auto;
+        padding-top: 60px; /* Adjusted padding to accommodate fixed navbar */
+    }
+    .section {
+        padding: 1rem;
+    }
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 0.75rem;
+    }
+    .contact-form button {
+        padding: 0.75rem 1.5rem;
     }
 }
