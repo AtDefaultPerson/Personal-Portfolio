@@ -130,6 +130,31 @@ a:hover {
     margin-top: 0;
 }
 
+/* Centered Navbar for Desktop */
+.navbar {
+    background-color: black !important; /* Ensure navbar background is black */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 1rem; /* Adjust the spacing between nav items as needed */
+}
+
+.navbar-nav .nav-link {
+    color: #00ccff !important; /* Cyan blue color for the text */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00ccff !important;
+    text-decoration: underline;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     /* Hide desktop navbar */
