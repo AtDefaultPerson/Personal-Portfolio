@@ -50,6 +50,7 @@ header {
     width: 85%;
     margin: 4rem auto 2rem; /* Adjusted margin to accommodate fixed navbar */
     max-width: 1200px;
+    padding-top: 60px; /* Added padding to top to prevent overlap */
 }
 .section:before {
     content: "";
@@ -182,6 +183,7 @@ a:hover {
     .container {
         width: 95%;
         margin: 2rem auto;
+        padding-top: 60px; /* Added padding to top to prevent overlap */
     }
     .section {
         padding: 1rem;
