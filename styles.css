@@ -12,19 +12,21 @@ header {
     background-image: url('background-header.jpg'); /* Add your desired background image for the header */
     background-size: cover;
     background-position: center;
-    padding: 4rem 0; /* Increase padding for more space */
+    padding: 6rem 0 2rem; /* Increase padding at the top to create space for the navbar */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     color: #fff;
+    position: relative;
+    z-index: 1; /* Ensure the header is above the navbar */
 }
 .container {
-    padding-top: 120px; /* Adjusted padding to accommodate fixed navbar */
+    padding-top: 20px; /* Reduced padding to match the new header padding */
 }
 .section:before {
     content: "";
     display: block;
-    height: 80px; /* Adjust this value based on the height of your navbar */
-    margin-top: -80px; /* Adjust this value based on the height of your navbar */
+    height: 60px; /* Adjust this value based on the height of your navbar */
+    margin-top: -60px; /* Adjust this value based on the height of your navbar */
     visibility: hidden;
 }
 h1, h2 {
@@ -134,6 +136,10 @@ a:hover {
 .navbar {
     background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure navbar background is black and see-through */
     border: none !important; /* Remove the border */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2; /* Ensure the navbar is above other content */
 }
 
 .navbar-nav {
