@@ -18,7 +18,7 @@ header {
     color: #fff;
 }
 .container {
-    padding-top: 80px; /* Adjusted padding to accommodate fixed navbar */
+    padding-top: 100px; /* Adjusted padding to accommodate fixed navbar */
 }
 .section:before {
     content: "";
@@ -133,7 +133,6 @@ a:hover {
 /* Centered Navbar for Desktop */
 .navbar {
     background-color: rgba(0, 0, 0, 0.8) !important; /* Ensure navbar background is black and see-through */
-    border-bottom: 1px solid #00ccff;
 }
 
 .navbar-nav {
