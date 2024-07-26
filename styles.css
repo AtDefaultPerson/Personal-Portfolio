@@ -21,7 +21,7 @@ header {
     z-index: 1; /* Ensure the header is above the navbar */
 }
 .container {
-    padding-top: 20px; /* Adjusted padding to fit the new layout */
+    padding-top: 20px; /* Adjusted padding to fit the new layout 1*/
 }
 .section:before {
     content: "";
