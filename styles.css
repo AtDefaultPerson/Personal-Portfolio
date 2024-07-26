@@ -140,13 +140,12 @@ a:hover {
     left: 0;
     height: 100%;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0.6); /* Make the navbar more see-through */
+    background-color: transparent; /* Make the navbar completely transparent */
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    border-right: 1px solid #00ccff; /* Add a border for visual separation */
 }
 
 .navbar-nav {
