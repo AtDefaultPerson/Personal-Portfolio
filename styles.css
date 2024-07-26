@@ -109,8 +109,8 @@ li {
     color: #fff;
     margin-top: 2rem;
     position: relative;
-    left: -200px; /* Extend to the left */
-    width: calc(100% + 200px); /* Adjust width to cover the full screen */
+    left: 0; /* Set left to 0 */
+    width: 100%; /* Set width to 100% */
 }
 .social-links a {
     margin: 0 1rem;
