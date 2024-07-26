@@ -108,6 +108,9 @@ li {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     margin-top: 2rem;
+    position: relative;
+    left: -200px; /* Extend to the left */
+    width: calc(100% + 200px); /* Adjust width to cover the full screen */
 }
 .social-links a {
     margin: 0 1rem;
@@ -218,6 +221,12 @@ a:hover {
     /* Remove left padding for mobile view */
     body {
         padding-left: 0;
+    }
+
+    /* Adjust footer for mobile view */
+    .footer {
+        left: 0;
+        width: 100%;
     }
 }
 
