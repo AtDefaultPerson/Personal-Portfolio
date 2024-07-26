@@ -55,9 +55,6 @@ h2 {
 .section h2 {
     margin-top: 0;
 }
-.section p, .section ul {
-    color: #fff; /* Explicitly set text color inside sections */
-}
 .contact-form {
     display: flex;
     flex-direction: column;
