@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg'); /* Make sure the image name and path are correct */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    padding-left: 200px; /* Adjust to create space for the vertical navbar */
+}
+
+header {
+    background-image: url('background_placeholder.jpg'); /* Add your desired background image for the header */
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0; /* Adjusted padding */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #fff;
+    position: relative;
+    z-index: 1; /* Ensure the header is above the navbar */
+}
+
+.container {
+    padding-top: 20px; /* Adjusted padding to fit the new layout */
+}
+
+.section:before {
+    content: "";
+    display: block;
+    height: 80px; /* Adjust this value based on the height of your navbar */
+    margin-top: -80px; /* Adjust this value based on the height of your navbar */
+    visibility: hidden;
+}
+
+h1, h2 {
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem; /* Increase font size for the header */
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.section {
+    background-color: rgba(0, 0, 0, 0.7); /* Ensure content sections have a visible background */
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden; /* Ensure content stays within the section */
+    position: relative; /* Needed for hover effect */
+}
+
+.section:hover .card {
+    opacity: 1;
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0.8); /* Enhance background on hover */
+}
+
+.card {
+    opacity: 1; /* Always visible */
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0.5); /* Transparent background for the card */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #004080;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.75rem 0;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.skill {
+    background-color: #007acc;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    background-color: #005999;
+}
+
+/* Vertical Navbar for Desktop */
+.navbar.fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: transparent !important; /* Ensure the navbar is completely transparent */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start; /* Align items to the left */
+    padding-left: 20px; /* Add some padding for spacing */
+}
+
+.navbar-nav .nav-item {
+    width: 100%;
+    margin: 1rem 0; /* Adjust the spacing between nav items as needed */
+}
+
+.navbar-nav .nav-link {
+    color: #00ccff !important; /* Cyan blue color for the text */
+    font-weight: bold;
+    width: 100%;
+    text-align: left; /* Align text to the left */
+    padding: 0.5rem 0;
+    transition: background-color 0.3s ease; /* Add a transition for background color */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important; /* Change text color on hover */
+    background-color: #00ccff; /* Change background color on hover */
+    border-radius: 4px; /* Add border-radius for rounded corners */
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    /* Hide desktop navbar */
+    .navbar.d-lg-flex {
+        display: none !important;
+    }
+
+    /* Show mobile navbar */
+    .navbar.d-lg-none {
+        display: flex !important;
+    }
+
+    header {
+        padding: 2rem 0;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .container {
+        width: 95%;
+        margin: 2rem auto;
+        padding-top: 60px; /* Adjusted padding to accommodate fixed navbar */
+    }
+    .section {
+        padding: 1rem;
+    }
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 0.75rem;
+    }
+    .contact-form button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Remove left padding for mobile view */
+    body {
+        padding-left: 0;
+    }
+}
+
+/* Ensure navbar doesn't overlap with content */
+@media (min-width: 992px) {
+    .container {
+        padding-top: 20px; /* Adjust this value based on the height of your desktop navbar */
+    }
+}
