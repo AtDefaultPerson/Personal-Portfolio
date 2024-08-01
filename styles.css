@@ -58,13 +58,13 @@ h2 {
     position: relative; /* Needed for hover effect */
 }
 
-.section:hover .card {
+.section:hover .section-content {
     opacity: 1;
     transform: translateY(0);
     background: rgba(0, 0, 0, 0.8); /* Enhance background on hover */
 }
 
-.card {
+.section-content {
     opacity: 1; /* Always visible */
     transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
     transform: translateY(0);
@@ -72,6 +72,10 @@ h2 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    margin-bottom: 1rem;
 }
 
 .contact-form {
@@ -176,38 +180,61 @@ li {
 /* Responsive Styles */
 @media (max-width: 992px) {
     /* Hide desktop navbar */
-    .navbar.d-lg-flex {
-        display: none !important;
+    .navbar.fixed-left {
+        display: none;
     }
 
     /* Show mobile navbar */
-    .navbar.d-lg-none {
-        display: flex !important;
+    .navbar-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 0.5rem;
+        z-index: 2;
+    }
+
+    .navbar-mobile .nav-item {
+        margin: 0;
+        flex: 1;
+        text-align: center;
+    }
+
+    .navbar-mobile .nav-link {
+        color: #fff !important;
     }
 
     header {
         padding: 2rem 0;
     }
+
     h1 {
         font-size: 2rem;
     }
+
     h2 {
         font-size: 1.5rem;
     }
+
     .container {
         width: 95%;
         margin: 2rem auto;
         padding-top: 60px; /* Adjusted padding to accommodate fixed navbar */
     }
+
     .section {
         padding: 1rem;
     }
+
     .skills {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
+
     .contact-form input, .contact-form textarea {
         padding: 0.75rem;
     }
+
     .contact-form button {
         padding: 0.75rem 1.5rem;
     }
