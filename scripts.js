@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Toggle Navbar on Mobile
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarMenu = document.getElementById('navbarMenu');
+
+    navbarToggle.addEventListener('click', function () {
+        navbarMenu.classList.toggle('active');
+    });
+
     // Form submission handling
     const form = document.querySelector('.contact-form form');
     form.addEventListener('submit', function (e) {
@@ -23,17 +31,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         .catch(error => console.error('Error:', error));
-    });
-
-    // Toggle Navbar on Mobile
-    const luxbarCheckbox = document.querySelector('#luxbar-checkbox');
-    const luxbarNavigation = document.querySelector('.luxbar-navigation');
-
-    luxbarCheckbox.addEventListener('change', function () {
-        if (this.checked) {
-            luxbarNavigation.classList.add('active');
-        } else {
-            luxbarNavigation.classList.remove('active');
-        }
     });
 });

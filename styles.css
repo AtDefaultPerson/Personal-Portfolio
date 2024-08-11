@@ -7,90 +7,81 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
-    padding-left: 200px; /* Space for vertical navbar on desktop */
 }
 
-/* Luxbar Styles */
-.luxbar {
-    background-color: #0056b3; /* Navbar background color */
-    font-family: 'Roboto', Arial, sans-serif;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333; /* Background color for the navbar */
+    padding: 10px;
+    z-index: 1000;
+    width: 100%; /* Full width on mobile */
 }
 
-.luxbar-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem;
-}
-
-.luxbar-menu-right {
+.navbar-container {
     display: flex;
     align-items: center;
 }
 
-.luxbar-navigation {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.luxbar-item {
-    margin: 0 1rem;
-}
-
-.luxbar-item a {
-    text-decoration: none;
+.navbar-toggle {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
     color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.luxbar-item a:hover {
-    color: #ffcc00;
-}
-
-/* Hamburger Menu for Mobile */
-.luxbar-checkbox {
-    display: none;
-}
-
-.luxbar-hamburger {
-    display: none;
     cursor: pointer;
 }
 
-.luxbar-hamburger span,
-.luxbar-hamburger span:before,
-.luxbar-hamburger span:after {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    transition: all 0.3s ease-in-out;
+.navbar-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Full width on mobile */
 }
 
-@media (max-width: 768px) {
-    .luxbar-hamburger {
-        display: block;
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333; /* Match navbar background */
+    border-bottom: 1px solid #444;
+}
+
+.navbar-menu li a:hover {
+    background-color: #444;
+}
+
+/* Show the menu when the button is clicked */
+.navbar-menu.active {
+    display: flex;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .navbar-container {
+        flex-direction: row;
     }
 
-    .luxbar-navigation {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #0056b3;
-    }
-
-    .luxbar-checkbox:checked + .luxbar-menu .luxbar-navigation {
+    .navbar-menu {
         display: flex;
+        flex-direction: row;
     }
 
-    .luxbar-item {
-        width: 100%;
-        text-align: center;
-        padding: 1rem 0;
+    .navbar-menu li a {
+        padding: 10px 20px;
+        border-bottom: none;
+    }
+
+    .navbar-toggle {
+        display: none; /* Hide the toggle button on desktop */
     }
 }
 
