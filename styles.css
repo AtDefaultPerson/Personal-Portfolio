@@ -7,7 +7,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
-    padding-left: 200px; /* Adjust to create space for the vertical navbar */
 }
 
 /* Positioning the toggle button in the top-left corner */
@@ -21,6 +20,55 @@ body {
     color: #00ccff;
     cursor: pointer;
     z-index: 10; /* Ensure it stays above other elements */
+}
+
+/* Vertical Navbar */
+.navbar.fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8); /* Make navbar visible */
+    z-index: 2;
+    display: none; /* Initially hidden, toggled via JS */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px; /* Adjust padding */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.navbar.active {
+    display: flex;
+}
+
+/* Navbar items */
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start; /* Align items to the left */
+    padding-left: 20px; /* Add some padding for spacing */
+}
+
+.navbar-nav .nav-item {
+    width: 100%;
+    margin: 1rem 0; /* Adjust the spacing between nav items as needed */
+}
+
+.navbar-nav .nav-link {
+    color: #00ccff !important; /* Cyan blue color for the text */
+    font-weight: bold;
+    width: 100%;
+    text-align: left; /* Align text to the left */
+    padding: 0.5rem 0;
+    transition: background-color 0.3s ease; /* Add a transition for background color */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important; /* Change text color on hover */
+    background-color: #00ccff; /* Change background color on hover */
+    border-radius: 4px; /* Add border-radius for rounded corners */
 }
 
 header {
@@ -143,80 +191,16 @@ li {
     background-color: #005999;
 }
 
-/* Vertical Navbar */
-.navbar.fixed-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    background-color: transparent !important; /* Ensure the navbar is completely transparent */
-    z-index: 2;
-    display: none; /* Initially hidden, toggled via JS */
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-}
-
-.navbar.active {
-    display: flex;
-}
-
-.navbar-nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start; /* Align items to the left */
-    padding-left: 20px; /* Add some padding for spacing */
-}
-
-.navbar-nav .nav-item {
-    width: 100%;
-    margin: 1rem 0; /* Adjust the spacing between nav items as needed */
-}
-
-.navbar-nav .nav-link {
-    color: #00ccff !important; /* Cyan blue color for the text */
-    font-weight: bold;
-    width: 100%;
-    text-align: left; /* Align text to the left */
-    padding: 0.5rem 0;
-    transition: background-color 0.3s ease; /* Add a transition for background color */
-}
-
-.navbar-nav .nav-link:hover {
-    color: #fff !important; /* Change text color on hover */
-    background-color: #00ccff; /* Change background color on hover */
-    border-radius: 4px; /* Add border-radius for rounded corners */
-}
-
 /* Responsive Styles */
 @media (max-width: 992px) {
-    header {
-        padding: 2rem 0;
+    .navbar.fixed-left {
+        width: 100%;
+        padding-top: 60px; /* Adjust padding */
+        background-color: rgba(0, 0, 0, 0.9); /* Darken background for mobile */
     }
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
+
     .container {
-        width: 95%;
-        margin: 2rem auto;
         padding-top: 60px; /* Adjusted padding to accommodate fixed navbar */
-    }
-    .section {
-        padding: 1rem;
-    }
-    .skills {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-    .contact-form input, .contact-form textarea {
-        padding: 0.75rem;
-    }
-    .contact-form button {
-        padding: 0.75rem 1.5rem;
     }
 
     /* Remove left padding for mobile view */
@@ -230,53 +214,27 @@ li {
 }
 
 @media (max-width: 768px) {
-    /* Header adjustments */
-    header {
-        padding: 1.5rem 0;
-    }
-    h1 {
-        font-size: 1.75rem;
-    }
-    h2 {
-        font-size: 1.25rem;
-    }
-    .container {
-        width: 90%;
-        margin: 1rem auto;
-        padding-top: 40px; /* Adjust padding */
-    }
-    .section {
-        padding: 0.5rem;
-        margin-bottom: 1rem;
-    }
-    .skills {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-    .contact-form input, .contact-form textarea {
-        padding: 0.5rem;
-    }
-    .contact-form button {
-        padding: 0.5rem 1rem;
-    }
-
-    /* Mobile Navbar */
     .navbar.fixed-left {
-        position: relative;
+        position: absolute;
         width: 100%;
-        background-color: #000;
-    }
-    .navbar-nav.active {
-        background-color: #000;
-        width: 100%;
-    }
-    .navbar-nav .nav-link {
-        text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #00ccff;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding-top: 60px;
     }
 
-    /* Remove left padding for mobile view */
-    body {
-        padding-left: 0;
+    .navbar-nav {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+        border-bottom: 1px solid #00ccff;
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: block;
     }
 }
