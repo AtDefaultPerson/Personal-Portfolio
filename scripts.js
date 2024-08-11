@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function () {
-            if (window.innerWidth <= 768) { // Mobile view
+            if (window.innerWidth <= 992) { // Mobile view
                 navbarMenu.classList.remove('active');
             }
         });
