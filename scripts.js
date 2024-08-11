@@ -25,23 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error:', error));
     });
 
-    // Toggle Navbar on Mobile and Desktop
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar');
+    // Toggle Navbar on Mobile
+    const luxbarCheckbox = document.querySelector('#luxbar-checkbox');
+    const luxbarNavigation = document.querySelector('.luxbar-navigation');
 
-    if (navbarToggle) {
-        navbarToggle.addEventListener('click', function () {
-            navbarMenu.classList.toggle('active');
-        });
-    }
-
-    // Auto-collapse the menu on mobile after selecting an item
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (window.innerWidth <= 992) { // Mobile view
-                navbarMenu.classList.remove('active');
-            }
-        });
+    luxbarCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            luxbarNavigation.classList.add('active');
+        } else {
+            luxbarNavigation.classList.remove('active');
+        }
     });
 });

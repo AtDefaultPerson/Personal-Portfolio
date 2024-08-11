@@ -10,69 +10,91 @@ body {
     padding-left: 200px; /* Space for vertical navbar on desktop */
 }
 
-/* Positioning the toggle button in the top-left corner */
-.navbar-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #00ccff;
-    cursor: pointer;
-    z-index: 10; /* Ensure it stays above other elements */
+/* Luxbar Styles */
+.luxbar {
+    background-color: #0056b3; /* Navbar background color */
+    font-family: 'Roboto', Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Vertical Navbar */
-.navbar.fixed-left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    background-color: rgba(0, 0, 0, 0.8); /* Ensure visibility */
-    z-index: 2;
-    display: none; /* Initially hidden, toggled via JS */
-    flex-direction: column;
+.luxbar-menu {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 60px; /* Spacing for the toggle button */
-    transition: transform 0.3s ease; /* Smooth transition */
+    padding: 0.5rem 2rem;
 }
 
-/* Hidden by default, shown when toggled */
-.navbar.active {
+.luxbar-menu-right {
     display: flex;
+    align-items: center;
 }
 
-/* Navbar items */
-.navbar-nav {
+.luxbar-navigation {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start; /* Align items to the left */
-    padding-left: 20px; /* Add some padding */
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.navbar-nav .nav-item {
-    width: 100%;
-    margin: 1rem 0; /* Adjust spacing between nav items */
+.luxbar-item {
+    margin: 0 1rem;
 }
 
-.navbar-nav .nav-link {
-    color: #00ccff !important; /* Cyan blue text */
+.luxbar-item a {
+    text-decoration: none;
+    color: #fff;
     font-weight: bold;
-    width: 100%;
-    text-align: left; /* Align text left */
-    padding: 0.5rem 0;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #fff !important; /* White text on hover */
-    background-color: #00ccff; /* Blue background on hover */
-    border-radius: 4px; /* Rounded corners */
+.luxbar-item a:hover {
+    color: #ffcc00;
 }
 
+/* Hamburger Menu for Mobile */
+.luxbar-checkbox {
+    display: none;
+}
+
+.luxbar-hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.luxbar-hamburger span,
+.luxbar-hamburger span:before,
+.luxbar-hamburger span:after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .luxbar-hamburger {
+        display: block;
+    }
+
+    .luxbar-navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0056b3;
+    }
+
+    .luxbar-checkbox:checked + .luxbar-menu .luxbar-navigation {
+        display: flex;
+    }
+
+    .luxbar-item {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+}
+
+/* Additional Styles for content */
 header {
     background-image: url('background_placeholder.jpg'); /* Add your desired background image for the header */
     background-size: cover;
