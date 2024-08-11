@@ -1,13 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Toggle Navbar on Mobile
-    const navbarToggle = document.getElementById('navbarToggle');
-    const navbarMenu = document.getElementById('navbarMenu');
-
-    navbarToggle.addEventListener('click', function () {
-        navbarMenu.classList.toggle('active');
-    });
-
-    // Form submission handling
     const form = document.querySelector('.contact-form form');
     form.addEventListener('submit', function (e) {
         e.preventDefault();
