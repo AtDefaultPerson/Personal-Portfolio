@@ -23,4 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error:', error));
     });
+
+    // Toggle Navbar on Mobile
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-nav');
+
+    if (navbarToggle) {
+        navbarToggle.addEventListener('click', function () {
+            navbarMenu.classList.toggle('active');
+        });
+    }
 });

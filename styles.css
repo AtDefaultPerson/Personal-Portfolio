@@ -218,9 +218,56 @@ li {
     }
 }
 
-/* Ensure navbar doesn't overlap with content */
-@media (min-width: 992px) {
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 1.5rem 0;
+    }
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
     .container {
-        padding-top: 20px; /* Adjust this value based on the height of your desktop navbar */
+        width: 90%;
+        margin: 1rem auto;
+        padding-top: 40px; /* Adjust padding */
+    }
+    .section {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 0.5rem;
+    }
+    .contact-form button {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Mobile Navbar */
+    .navbar.fixed-left {
+        position: relative;
+        width: 100%;
+        background-color: #000;
+    }
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .navbar-nav .nav-item {
+        width: auto;
+    }
+    .navbar-nav .nav-link {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    /* Remove left padding for mobile view */
+    body {
+        padding-left: 0;
     }
 }
