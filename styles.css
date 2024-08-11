@@ -218,6 +218,25 @@ li {
     }
 }
 
+/* Toggle button styles */
+.navbar-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #00ccff;
+    cursor: pointer;
+}
+
+/* Hide the nav items by default in mobile view */
+.navbar-nav {
+    display: none;
+}
+
+.navbar-nav.active {
+    display: block;
+}
+
 @media (max-width: 768px) {
     /* Header adjustments */
     header {
@@ -254,16 +273,22 @@ li {
         width: 100%;
         background-color: #000;
     }
+    .navbar-toggle {
+        display: block;
+        margin: 10px auto;
+    }
     .navbar-nav {
         flex-direction: row;
         justify-content: space-around;
     }
-    .navbar-nav .nav-item {
-        width: auto;
+    .navbar-nav.active {
+        background-color: #000;
+        width: 100%;
     }
     .navbar-nav .nav-link {
         text-align: center;
-        padding: 1rem;
+        padding: 10px 0;
+        border-bottom: 1px solid #00ccff;
     }
 
     /* Remove left padding for mobile view */
