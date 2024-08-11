@@ -10,6 +10,19 @@ body {
     padding-left: 200px; /* Adjust to create space for the vertical navbar */
 }
 
+/* Positioning the toggle button in the top-left corner */
+.navbar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #00ccff;
+    cursor: pointer;
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
 header {
     background-image: url('background_placeholder.jpg'); /* Add your desired background image for the header */
     background-size: cover;
@@ -130,7 +143,7 @@ li {
     background-color: #005999;
 }
 
-/* Vertical Navbar for Desktop */
+/* Vertical Navbar */
 .navbar.fixed-left {
     position: fixed;
     top: 0;
@@ -139,10 +152,14 @@ li {
     width: 200px;
     background-color: transparent !important; /* Ensure the navbar is completely transparent */
     z-index: 2;
-    display: flex;
+    display: none; /* Initially hidden, toggled via JS */
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+}
+
+.navbar.active {
+    display: flex;
 }
 
 .navbar-nav {
@@ -175,16 +192,6 @@ li {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-    /* Hide desktop navbar */
-    .navbar.d-lg-flex {
-        display: none !important;
-    }
-
-    /* Show mobile navbar */
-    .navbar.d-lg-none {
-        display: flex !important;
-    }
-
     header {
         padding: 2rem 0;
     }
@@ -216,25 +223,10 @@ li {
     body {
         padding-left: 0;
     }
-}
 
-/* Toggle button styles */
-.navbar-toggle {
-    display: none;
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #00ccff;
-    cursor: pointer;
-}
-
-/* Hide the nav items by default in mobile view */
-.navbar-nav {
-    display: none;
-}
-
-.navbar-nav.active {
-    display: block;
+    .navbar-nav .nav-link {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -272,14 +264,6 @@ li {
         position: relative;
         width: 100%;
         background-color: #000;
-    }
-    .navbar-toggle {
-        display: block;
-        margin: 10px auto;
-    }
-    .navbar-nav {
-        flex-direction: row;
-        justify-content: space-around;
     }
     .navbar-nav.active {
         background-color: #000;
